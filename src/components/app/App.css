@@ -1,0 +1,38 @@
+.CodeForm-Header {
+  height: 3em;
+  display: block;
+  line-height: 3em;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.CodeForm-Header-Left {
+  float: inline-start;
+}
+
+.CodeForm-Header-Right {
+  float: inline-end;
+}
+
+.CodeForm-Row {
+  display: block;
+}
+
+.CodeForm-ViewMode-Desktop {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.CodeForm-ViewMode-Tablet {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.CodeForm-ViewMode-Mobile {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  width: 768px;
+  margin: 0 auto;
+}
