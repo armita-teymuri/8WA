@@ -1,21 +1,16 @@
-import "./Adder.css"
+import "./Adder.css";
 
 const Adder = ({ row, onClick }) => {
   return (
     <>
-      <div className="CodeForm-Adder">
-        <span
-          className="CodeForm-Adder-Plus"
-          onClick={() => {
-            onClick(row);
-          }}
-        >
-          +
-        </span>
-      </div>
+      <div
+        className="CodeForm-Adder"
+        onClick={() => {
+          onClick(row);
+        }}
+      ></div>
     </>
   );
 };
-
 
 export default Adder;

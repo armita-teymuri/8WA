@@ -3,13 +3,18 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Adder from "../adder/Adder";
 
-const Menu = () => {
+const Menu = ({ onSelect }) => {
+  const elements = {
+    1: <label>Label</label>,
+    2: <input />,
+    3: <img />,
+  };
   return (
     <>
       <div>
-        <span>Label</span>
-        <span>Input</span>
-        <span>Image</span>
+        <span onClick={() => onSelect(elements[1])}>Label</span>
+        <span onClick={() => onSelect(elements[2])}>Input</span>
+        <span onClick={() => onSelect(elements[3])}>Image</span>
       </div>
     </>
   );
@@ -21,6 +26,7 @@ const Header = ({ setPreview, setViewMode }) => {
       <div className="CodeForm-Header">
         <div className="CodeForm-Header-Left">
           <span
+            className="CodeForm-ViewMode-Button"
             onClick={() => {
               setViewMode("CodeForm-ViewMode-Desktop");
             }}
@@ -29,6 +35,7 @@ const Header = ({ setPreview, setViewMode }) => {
           </span>
           <span>|</span>
           <span
+            className="CodeForm-ViewMode-Button"
             onClick={() => {
               setViewMode("CodeForm-ViewMode-Tablet");
             }}
@@ -37,6 +44,7 @@ const Header = ({ setPreview, setViewMode }) => {
           </span>
           <span>|</span>
           <span
+            className="CodeForm-ViewMode-Button"
             onClick={() => {
               setViewMode("CodeForm-ViewMode-Mobile");
             }}
@@ -47,6 +55,7 @@ const Header = ({ setPreview, setViewMode }) => {
 
         <div className="CodeForm-Header-Right">
           <span
+            className="CodeForm-EditMode-Button"
             onClick={() => {
               setPreview(true);
             }}
@@ -55,6 +64,7 @@ const Header = ({ setPreview, setViewMode }) => {
           </span>
           <span>|</span>
           <span
+            className="CodeForm-EditMode-Button"
             onClick={() => {
               setPreview(false);
             }}
@@ -88,33 +98,36 @@ const App = () => {
 
   useEffect(() => {}, [data]);
 
+  const getElement = () => {
+    return (
+      <div className="CodeForm-Row">
+        <label>Test</label>
+      </div>
+    );
+  };
+
+  const getAdder = (row) => {
+    return (
+      <Adder
+        row={row}
+        onClick={(row) => {
+          var tmp = data.slice();
+          tmp.splice(row + 1, 0, getElement());
+          setData(tmp);
+        }}
+      />
+    );
+  };
+
   return (
     <>
       <Header setPreview={setPreview} setViewMode={setViewMode} />
-      <div className={viewMode}>
+      <div className={"CodeForm-ViewMode " + viewMode}>
+        {!preview ? getAdder(-1) : ""}
         {data.map((item, row) => (
           <>
             {item}
-
-            {!preview ? (
-              <Adder
-                row={row}
-                onClick={(row) => {
-                  var tmp = data.slice();
-                  tmp.splice(
-                    row + 1,
-                    0,
-                    <div className="CodeForm-Row">
-                      <label>Test</label>
-                    </div>
-                  );
-                  console.log(tmp);
-                  setData(tmp);
-                }}
-              />
-            ) : (
-              ""
-            )}
+            {!preview ? getAdder(row) : ""}
           </>
         ))}
       </div>
