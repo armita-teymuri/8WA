@@ -1,22 +1,22 @@
 .CodeForm-Adder {
   /* height: 0.1em; */
-  height:1em;
+  height: 1em;
   display: block;
-  text-align: center;
-  border-bottom: 0.1em dotted gray;
-  border-top: 0.1em dotted gray;
-
-  color: lightgray;
   line-height: 1em;
+  user-select: none;
+  color: lightgray;
+  text-align: center;
+  border-top: 0.1em dotted gray;
+  border-bottom: 0.1em dotted gray;
 }
 
-.CodeForm-Adder span{
+.CodeForm-Adder span {
   font-size: 80%;
 }
 
 .CodeForm-Adder.Active,
-.CodeForm-Adder.Active:hover{
-  background-color: rgb(29, 206, 29);
+.CodeForm-Adder.Active:hover {
+  background-color: rgb(179, 206, 29);
 }
 
 .CodeForm-Adder:hover {

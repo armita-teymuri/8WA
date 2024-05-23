@@ -8,7 +8,7 @@ import MainMenu from "../menu/MainMenu";
 const App = () => {
   const [data, setData] = useState([
     <div className="CodeForm-Row">
-      <p style={{ color: "tomato" }}>Design your own product</p>
+      <p style={{ textAlign: "center" }}>Design your own product</p>
     </div>,
   ]);
 
@@ -35,11 +35,12 @@ const App = () => {
   };
 
   const handleSelect = (el) => {
+    if (selectedAdderIndex <= -2) return;
     const row = selectedAdderIndex;
     const tmp = data.slice();
     tmp.splice(row + 1, 0, getElement(el));
     setData(tmp);
-    setSelectedAdderIndex(-2)
+    setSelectedAdderIndex(-2);
   };
 
   return (

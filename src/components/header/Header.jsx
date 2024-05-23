@@ -7,25 +7,25 @@ const Header = ({ setPreview, setViewMode }) => {
   const [selectedViewPort, setSelectedViewMode] = useState(1);
 
   const preViewItems = {
-    1: { value: false, alt: "Design", icon: "ico-menu-unknown" },
-    2: { value: true, alt: "Preview", icon: "ico-menu-unknown" },
+    1: { value: false, alt: "Design", icon: "9999" },
+    2: { value: true, alt: "Preview", icon: "9999" },
   };
 
   const viewModeItems = {
     1: {
       value: "CodeForm-ViewMode-Desktop",
       alt: "Desktop",
-      icon: "ico-menu-unknown",
+      icon: "2001",
     },
     2: {
       value: "CodeForm-ViewMode-Tablet",
       alt: "Tablet",
-      icon: "ico-menu-unknown",
+      icon: "2002",
     },
     3: {
       value: "CodeForm-ViewMode-Mobile",
       alt: "Mobile",
-      icon: "ico-menu-unknown",
+      icon: "2003",
     },
   };
 

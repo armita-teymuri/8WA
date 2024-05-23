@@ -8,13 +8,13 @@ const MainMenu = ({ onSelect }) => {
 
   const menus = {
     1: {
-      icon: "ico-menu-form",
+      icon: "1000",
       alt: "Forms",
       menu: <FormMenu onSelect={onSelect} />,
     },
-    2: { icon: "ico-menu-unknown", alt: "Layout", menu: <></> }, //layout
-    3: { icon: "ico-menu-unknown", alt: "String", menu: <></> }, //string
-    4: { icon: "ico-menu-unknown", alt: "Image", menu: <></> }, //image
+    2: { icon: "9999", alt: "Layout", menu: <></> },
+    3: { icon: "9999", alt: "String", menu: <></> },
+    4: { icon: "9999", alt: "Image", menu: <></> },
   };
 
   return (
