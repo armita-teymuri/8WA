@@ -6,8 +6,9 @@
   user-select: none;
   color: lightgray;
   text-align: center;
-  border-top: 0.1em dotted gray;
-  border-bottom: 0.1em dotted gray;
+  /* border-top: 0.1em dotted gray;
+  border-bottom: 0.1em dotted gray; */
+  background-color: #efefef;
 }
 
 .CodeForm-Adder span {
@@ -16,7 +17,8 @@
 
 .CodeForm-Adder.Active,
 .CodeForm-Adder.Active:hover {
-  background-color: rgb(179, 206, 29);
+  background-color: #ebebeb;
+  color:#999999;
 }
 
 .CodeForm-Adder:hover {

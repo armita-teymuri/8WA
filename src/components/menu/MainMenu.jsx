@@ -1,6 +1,7 @@
 import "./MainMenu.css";
 import { useState } from "react";
 import FormMenu from "./FormMenu";
+import LayoutMenu from "./LayoutMenu";
 import ImageButton from "../image_button/ImageButton";
 
 const MainMenu = ({ onSelect }) => {
@@ -12,9 +13,14 @@ const MainMenu = ({ onSelect }) => {
       alt: "Forms",
       menu: <FormMenu onSelect={onSelect} />,
     },
-    2: { icon: "9999", alt: "Layout", menu: <></> },
+    2: {
+      icon: "9999",
+      alt: "Layout",
+      menu: <LayoutMenu onSelect={onSelect} />,
+    },
     3: { icon: "9999", alt: "String", menu: <></> },
     4: { icon: "9999", alt: "Image", menu: <></> },
+    5: { icon: "9999", alt: "Complex", menu: <></> },
   };
 
   return (

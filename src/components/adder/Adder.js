@@ -14,7 +14,9 @@ const Adder = ({ row, isActive, onClick }) => {
         onClick={() => {
           onClick(row);
         }}
-      ><span>R{row}</span></div>
+      >
+        <span>R{row}</span>
+      </div>
     </>
   );
 };

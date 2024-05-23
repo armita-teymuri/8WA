@@ -1,4 +1,3 @@
-import "./App.css";
 import { useState } from "react";
 import { useEffect } from "react";
 import Adder from "../adder/Adder";
@@ -19,7 +18,7 @@ const App = () => {
   useEffect(() => {}, [data]);
 
   const getElement = (el) => {
-    return <div className="CodeForm-Row">{el}</div>;
+    return <div className="IWA-Row">{el}</div>;
   };
 
   const getAdder = (row) => {
