@@ -5,6 +5,22 @@
   text-align: center;
   border-bottom: 0.1em dotted gray;
   border-top: 0.1em dotted gray;
+
+  color: lightgray;
+  line-height: 1em;
+}
+
+.CodeForm-Adder span{
+  font-size: 80%;
+}
+
+.CodeForm-Adder.Active,
+.CodeForm-Adder.Active:hover{
+  background-color: rgb(29, 206, 29);
+}
+
+.CodeForm-Adder:hover {
+  background-color: #dadada;
 }
 
 .CodeForm-Adder:hover {

@@ -1,0 +1,29 @@
+.CodeForm-ImageButton {
+  height: 2.5em;
+  cursor: pointer;
+  user-select: none;
+  padding-left: .25em;
+  padding-right: .25em;
+  display: inline-block;
+  text-align: center;
+
+  border: 2px solid transparent;
+}
+.CodeForm-ImageButton *{
+ display: block;
+}
+
+.CodeForm-ImageButton img{
+  width: 1.7em;
+}
+
+.CodeForm-ImageButton span{
+  color:black;
+  font-size: 45%;
+  margin-top: .25em;
+}
+
+.CodeForm-ImageButton.Active{
+  border: 2px solid rgb(196, 196, 196);
+  border-radius: .2em;
+}

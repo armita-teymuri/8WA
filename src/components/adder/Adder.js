@@ -1,14 +1,20 @@
 import "./Adder.css";
 
-const Adder = ({ row, onClick }) => {
+const style = {
+  isActive: {
+    backgroundColor: "green",
+  },
+};
+
+const Adder = ({ row, isActive, onClick }) => {
   return (
     <>
       <div
-        className="CodeForm-Adder"
+        className={"CodeForm-Adder " + (isActive ? "Active" : "")}
         onClick={() => {
           onClick(row);
         }}
-      ></div>
+      ><span>R{row}</span></div>
     </>
   );
 };

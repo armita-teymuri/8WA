@@ -1,0 +1,10 @@
+.CodeForm-Button {
+  padding: 1em;
+  cursor: pointer;
+  color: #323232;
+  user-select: none;
+}
+
+.CodeForm-Button.Active{
+  font-weight: bold;
+}

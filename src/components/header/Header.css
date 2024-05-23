@@ -1,0 +1,18 @@
+.CodeForm-Header-Left ,
+.CodeForm-Header-Right {
+  display: inline-block;
+}
+
+.CodeForm-ViewMode {
+  margin: 0 auto;
+  border-left: 1px dotted gray;
+  border-right: 1px dotted gray;
+}
+
+.CodeForm-ViewMode-Tablet {
+  width: 1024px;
+}
+
+.CodeForm-ViewMode-Mobile {
+  width: 768px;
+}
