@@ -1,19 +1,19 @@
 {
-  "short_name": "CodeForm",
-  "name": "CodeForm All-in-One App Designer",
+  "short_name": "8WA",
+  "name": "8WA All-in-One App Designer",
   "icons": [
     {
-      "src": "icons/64.png",
+      "src": "/icons/64.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "icons/192.png",
+      "src": "/icons/192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "icons/512.png",
+      "src": "/icons/512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
