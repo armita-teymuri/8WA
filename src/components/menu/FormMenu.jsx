@@ -1,5 +1,7 @@
 import "./FormMenu.css";
+import Flex from "../flex/Flex";
 import ImageButton from "../image_button/ImageButton";
+
 
 const FormMenu = ({ onSelect }) => {
   const elements = {
@@ -23,7 +25,18 @@ const FormMenu = ({ onSelect }) => {
       alt: "Check",
       element: <input type="checkbox" />,
     },
+    5: {
+      icon: "9999",
+      alt: "Flex",
+      element: <Flex />,
+    },
+    6: {
+      icon: "9999",
+      alt: "Relative",
+      element: <div style={{ position: "relative" }}></div>,
+    },
   };
+
   return (
     <>
       <div style={{ display: "inline-block" }}>
