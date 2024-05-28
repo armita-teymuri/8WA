@@ -1,11 +1,5 @@
 import "./Adder.css";
 
-const style = {
-  isActive: {
-    backgroundColor: "green",
-  },
-};
-
 const Adder = ({ row, isActive, onClick }) => {
   return (
     <>
@@ -15,7 +9,7 @@ const Adder = ({ row, isActive, onClick }) => {
           onClick(row);
         }}
       >
-        <span>R{row}</span>
+        <span>+{row}</span>
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-body {
+body, * {
   margin: 0;
 }
 
@@ -19,11 +19,13 @@ body {
   user-select: none;
   color: lightgray;
   text-align: center;
-  /* border-left: 0.1em dotted gray;
-  border-right: 0.1em dotted gray; */
   background-color: #efefef;
 }
 
 .IWA-Flex-Cell:hover {
   background-color: #dadada;
+}
+
+.IWA-Cell-Drag-Over {
+  border: 1px dashed tomato;
 }
