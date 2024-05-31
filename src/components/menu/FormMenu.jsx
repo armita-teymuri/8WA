@@ -1,28 +1,49 @@
 import "./FormMenu.css";
+import M_Card from "../menu-items/M_Card";
+import M_NavBar from "../menu-items/M_NavBar";
+import M_Button from "../menu-items/M_Button";
+import M_Footer from "../menu-items/M_Footer";
 import ImageButton from "../image_button/ImageButton";
+import M_Pagination from "../menu-items/M_Pagination";
+import M_BreadCrumbs from "../menu-items/M_BreadCrumbs";
+import M_Tab from "../menu-items/M_Tab";
 
 const ELEMENTS = {
   1: {
-    icon: "1004",
-    alt: "Text",
-    element: <input type="text" readOnly />,
+    icon: "M001",
+    alt: "NavBar",
+    element: <M_NavBar />,
   },
   2: {
-    icon: "1003",
-    alt: "Button",
-    element: <input type="button" value="Button" />,
+    icon: "M002",
+    alt: "Pagination",
+    element: <M_Pagination />,
   },
   3: {
-    icon: "1001",
-    alt: "Radio",
-    element: <input type="radio" />,
+    icon: "M003",
+    alt: "Button",
+    element: <M_Button />,
   },
   4: {
-    icon: "1002",
-    alt: "Check",
-    element: <input type="checkbox" />,
+    icon: "M004",
+    alt: "BreadCrumbs",
+    element: <M_BreadCrumbs />,
   },
-  // 5: 0
+  5: {
+    icon: "M005",
+    alt: "Card",
+    element: <M_Card />,
+  },
+  6: {
+    icon: "M006",
+    alt: "Footer",
+    element: <M_Footer />,
+  },
+  7: {
+    icon: "M007",
+    alt: "Tab",
+    element: <M_Tab />,
+  },
 };
 
 const FormMenu = ({ onSelect }) => {
