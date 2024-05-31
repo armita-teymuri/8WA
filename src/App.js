@@ -3,6 +3,7 @@ import Flex from "./components/layouts/Flex";
 import Adder from "./components/adder/Adder";
 import Header from "./components/header/Header";
 import PreviewContext from "./contexts/previewContext";
+import PlaceHolder from "./components/layouts/PlaceHolder";
 import FormMenu, { ELEMENTS } from "./components/menu/FormMenu";
 
 const DRAG_OVER = "IWA-Cell-Drag-Over";
@@ -24,7 +25,7 @@ const App = () => {
   const [viewMode, setViewMode] = useState("");
   const [preview, setPreview] = useState(false);
   const [data, setData] = useState([
-    <p style={style.p}>DESIGN YOR OWN PRODUCT</p>,
+    [<p style={style.p}>DESIGN YOR OWN PRODUCT</p>],
   ]);
 
   useEffect(() => {}, [data]);
@@ -58,13 +59,23 @@ const App = () => {
     const elementId = event.dataTransfer.getData("el");
     // alert(item);
 
-    let newElement = document.createElement("label");
-    newElement.id = "div1";
-    newElement.textContent = "Hello DIV";
+    // let newElement = document.createElement("label");
+    // newElement.id = "div1";
+    // newElement.textContent = "Hello DIV";
 
     if (event.target.classList.contains("IWA-DragHere")) {
-      console.log(ELEMENTS[1].icon);
+      console.log(ELEMENTS[elementId].icon,elementId);
       // event.target.replaceChild(ELEMENTS[parseInt(elementId)].element,event.target.firstChild);
+
+      let r = parseInt(event.target.parentNode.getAttribute("r"));
+      let c = parseInt(event.target.parentNode.getAttribute("c"));
+      console.log(r, c);
+
+      const tmpRow = data[r].slice();
+      tmpRow[c] = ELEMENTS[elementId].element;
+      const tmpData = data.slice();
+      tmpData[r] = tmpRow;
+      setData(tmpData);
     }
   };
 
@@ -84,7 +95,7 @@ const App = () => {
 
   const handleSelect = (row) => {
     const tmp = data.slice();
-    tmp.splice(row, 0, <Flex />);
+    tmp.splice(row, 0, [<PlaceHolder />]);
     setData(tmp);
   };
 
@@ -97,10 +108,10 @@ const App = () => {
         <FormMenu />
         <div className={"CodeForm-ViewMode " + viewMode}>
           {!preview ? getAdder(0) : ""}
-          {data.map((item, row) => (
+          {data.map((_, rowIndex) => (
             <>
-              {item}
-              {!preview ? getAdder(row + 1) : ""}
+              {<Flex data={data} setData={setData} rowIndex={rowIndex} />}
+              {!preview ? getAdder(rowIndex + 1) : ""}
             </>
           ))}
         </div>

@@ -6,17 +6,21 @@ const style = {
   holder: {},
 };
 
-const Flex = () => {
+const Flex = ({ data, setData, rowIndex }) => {
   const { preview, setPreview } = useContext(PreviewContext);
-  const [cell, setCell] = useState([<PlaceHolder />]);
+  // const [cell, setCell] = useState(rowElements); // this is a list like [<p/>,<br/>,...]
 
   const handlePlusClick = (index) => {
-    const tmp = cell.slice();
-    tmp.splice(index + 1, 0, <PlaceHolder />);
-    setCell(tmp);
+    const tmpRow = data[rowIndex].slice();
+    tmpRow.splice(index + 1, 0, <PlaceHolder />);
+
+    const tmpData = data.slice();
+    tmpData[rowIndex] = tmpRow;
+
+    setData(tmpData);
   };
 
-  const plus = ( index) => {
+  const plus = (index) => {
     if (!preview)
       return (
         <div
@@ -34,11 +38,17 @@ const Flex = () => {
   return (
     <>
       <div style={{ display: "flex" }}>
-        {plus( -1)}
-        {cell.map((element, index) => (
+        {plus(-1)}
+        {data[rowIndex].map((element, index) => (
           <>
-            <div style={{ flex: 1, textAlign: "center" }}>{element}</div>
-            {plus( index)}
+            <div
+              r={rowIndex}
+              c={index}
+              style={{ flex: 1, textAlign: "center" }}
+            >
+              {element}
+            </div>
+            {plus(index)}
           </>
         ))}
       </div>
