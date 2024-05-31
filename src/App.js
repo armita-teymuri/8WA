@@ -8,25 +8,10 @@ import FormMenu, { ELEMENTS } from "./components/menu/FormMenu";
 
 const DRAG_OVER = "IWA-Cell-Drag-Over";
 
-const style = {
-  p: {
-    display: "block",
-    /* */
-    color: "white",
-    padding: "1em",
-    fontSize: "60%",
-    fontWeight: "bold",
-    textAlign: "center",
-    background: "tomato",
-  },
-};
-
 const App = () => {
   const [viewMode, setViewMode] = useState("");
   const [preview, setPreview] = useState(false);
-  const [data, setData] = useState([
-    [<p style={style.p}>DESIGN YOR OWN PRODUCT</p>],
-  ]);
+  const [data, setData] = useState([[<PlaceHolder />]]);
 
   useEffect(() => {}, [data]);
 
@@ -64,7 +49,7 @@ const App = () => {
     // newElement.textContent = "Hello DIV";
 
     if (event.target.classList.contains("IWA-DragHere")) {
-      console.log(ELEMENTS[elementId].icon,elementId);
+      console.log(ELEMENTS[elementId].icon, elementId);
       // event.target.replaceChild(ELEMENTS[parseInt(elementId)].element,event.target.firstChild);
 
       let r = parseInt(event.target.parentNode.getAttribute("r"));
