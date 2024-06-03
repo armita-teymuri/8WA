@@ -1,106 +1,46 @@
-import { useState, useEffect } from "react";
-import Flex from "./components/layouts/Flex";
-import Adder from "./components/adder/Adder";
-import Header from "./components/header/Header";
+import { useState } from "react";
+import { addToArrayAtIndex } from "./utils/array";
 import PreviewContext from "./contexts/previewContext";
-import PlaceHolder from "./components/layouts/PlaceHolder";
-import FormMenu, { ELEMENTS } from "./components/menu/FormMenu";
+import ViewModeContext from "./contexts/viewModeContext";
+import Header from "./components/code-form/header/Header";
+import Screen from "./components/code-form/screen/Screen";
+import FormMenu from "./components/code-form/menu/FormMenu";
+import AddSign from "./components/code-form/add-sign/AddSign";
 
-const DRAG_OVER = "IWA-Cell-Drag-Over";
-
-const App = () => {
+const App = ({}) => {
   const [viewMode, setViewMode] = useState("");
   const [preview, setPreview] = useState(false);
-  const [data, setData] = useState([[<PlaceHolder />]]);
+  const [screenList, setScreenList] = useState([<Screen />]);
 
-  useEffect(() => {}, [data]);
-
-  /* ***************************************************************** */
-
-  const removeClass = () => {
-    let elements = document.getElementsByClassName(DRAG_OVER);
-    elements[0] && elements[0].classList.remove(DRAG_OVER);
+  const handleNewScreen = (index) => {
+    setScreenList(addToArrayAtIndex(screenList, index + 1, <Screen />));
   };
-
-  document.ondragstart = function (event) {
-    event.dataTransfer.setData("el", event.target.getAttribute("elementId"));
-  };
-
-  document.ondragend = function () {
-    removeClass();
-  };
-
-  /* Events fired on the drop target */
-  document.ondragover = function (event) {
-    event.preventDefault();
-    removeClass();
-
-    if (event.target.classList.contains("IWA-DragHere"))
-      event.target.className += " " + DRAG_OVER;
-  };
-
-  document.ondrop = function (event) {
-    event.preventDefault();
-    const elementId = event.dataTransfer.getData("el");
-    // alert(item);
-
-    // let newElement = document.createElement("label");
-    // newElement.id = "div1";
-    // newElement.textContent = "Hello DIV";
-
-    if (event.target.classList.contains("IWA-DragHere")) {
-      console.log(ELEMENTS[elementId].icon, elementId);
-      // event.target.replaceChild(ELEMENTS[parseInt(elementId)].element,event.target.firstChild);
-
-      let r = parseInt(event.target.parentNode.getAttribute("r"));
-      let c = parseInt(event.target.parentNode.getAttribute("c"));
-      console.log(r, c);
-
-      const tmpRow = data[r].slice();
-      tmpRow[c] = ELEMENTS[elementId].element;
-      const tmpData = data.slice();
-      tmpData[r] = tmpRow;
-      setData(tmpData);
-    }
-  };
-
-  /* ***************************************************************** */
-
-  const getAdder = (row) => {
-    return (
-      <Adder
-        key={row}
-        row={row}
-        onClick={(row) => {
-          handleSelect(row);
-        }}
-      />
-    );
-  };
-
-  const handleSelect = (row) => {
-    const tmp = data.slice();
-    tmp.splice(row, 0, [<PlaceHolder />]);
-    setData(tmp);
-  };
-
-  /* ***************************************************************** */
 
   return (
     <PreviewContext.Provider value={{ preview, setPreview }}>
-      <>
+      <ViewModeContext.Provider value={{ viewMode, setViewMode }}>
         <Header setViewMode={setViewMode} />
         <FormMenu />
-        <div className={"CodeForm-ViewMode " + viewMode}>
-          {!preview ? getAdder(0) : ""}
-          {data.map((_, rowIndex) => (
+        <div style={{ overflowX: "scroll" ,width:"100%"}}>
+          <AddSign
+            onClick={() => {
+              handleNewScreen(-1);
+            }}
+          />
+          {screenList.map((screen, index) => (
             <>
-              {<Flex data={data} setData={setData} rowIndex={rowIndex} />}
-              {!preview ? getAdder(rowIndex + 1) : ""}
+              <div style={{ display: "inline-block" }}>{screen}</div>
+              <div style={{ display: "inline-block" }}>
+                <AddSign
+                  onClick={() => {
+                    handleNewScreen(index);
+                  }}
+                />
+              </div>
             </>
           ))}
         </div>
-      </>
+      </ViewModeContext.Provider>
     </PreviewContext.Provider>
   );
 };

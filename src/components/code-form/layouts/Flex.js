@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import PlaceHolder from "./PlaceHolder";
-import PreviewContext from "../../contexts/previewContext";
+import PreviewContext from "../../../contexts/previewContext";
 
 const style = {
   holder: {},

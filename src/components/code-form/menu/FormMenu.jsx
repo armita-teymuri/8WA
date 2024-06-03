@@ -1,12 +1,13 @@
 import "./FormMenu.css";
-import M_Card from "../menu-items/M_Card";
-import M_NavBar from "../menu-items/M_NavBar";
-import M_Button from "../menu-items/M_Button";
-import M_Footer from "../menu-items/M_Footer";
+import M_Card from "../../menu-items/M_Card";
+import M_NavBar from "../../menu-items/M_NavBar";
+import M_Button from "../../menu-items/M_Button";
+import M_Footer from "../../menu-items/M_Footer";
 import ImageButton from "../image_button/ImageButton";
-import M_Pagination from "../menu-items/M_Pagination";
-import M_BreadCrumbs from "../menu-items/M_BreadCrumbs";
-import M_Tab from "../menu-items/M_Tab";
+import M_Pagination from "../../menu-items/M_Pagination";
+import M_BreadCrumbs from "../../menu-items/M_BreadCrumbs";
+import M_Tab from "../../menu-items/M_Tab";
+import N_Button from "../../menu-items2/button/N_Button";
 
 const ELEMENTS = {
   1: {
@@ -22,7 +23,7 @@ const ELEMENTS = {
   3: {
     icon: "M003",
     alt: "Button",
-    element: <M_Button />,
+    element: <N_Button />,
   },
   4: {
     icon: "M004",

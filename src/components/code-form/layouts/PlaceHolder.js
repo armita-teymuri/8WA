@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import PreviewContext from "../../contexts/previewContext";
+import PreviewContext from "../../../contexts/previewContext";
 
 const style = {
   placeholder: {

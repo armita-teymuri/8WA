@@ -1,7 +1,7 @@
 import "./Header.css";
 import { useContext, useState } from "react";
 import ImageButton from "../image_button/ImageButton";
-import PreviewContext from "../../contexts/previewContext";
+import PreviewContext from "../../../contexts/previewContext";
 
 const Header = ({ setViewMode }) => {
   const {preview, setPreview} = useContext(PreviewContext);

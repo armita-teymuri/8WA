@@ -1,0 +1,28 @@
+.CF_AddSign {
+  padding: 1em;
+  border-radius: 50%;
+  border: 0.2em solid lightgray;
+  color: lightgray;
+  height: 2em;
+  line-height: 0;
+  width: 2em;
+  text-align: center;
+  position: relative;
+  margin: 1em;
+}
+
+.CF_AddSign::after {
+  content: "+";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  line-height: 1.8em;
+}
+
+.CF_AddSign_Holder {
+  height: 400px;
+  /* background-color: yellow; */
+  display: inline-block;
+}
