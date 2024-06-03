@@ -1,6 +1,29 @@
 # CodeForm
 - Design your application
 
+![](/showcase/V0.4.0_Design.png)
+
+## Definition Language
+- Not sure but i think this can help AI to intract with software
+~~~DL
+# ScreenA
+Header
+-
+Button
+  Name:Next
+  Link:/ScreenB
+-
+Footer
+
+# ScreenB
+Header
+-
+Button
+  Name:Previous
+  Link:/ScreenA
+-
+Footer
+~~~
 
 ## Dependencies
 

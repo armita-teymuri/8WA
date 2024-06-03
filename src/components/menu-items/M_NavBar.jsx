@@ -5,18 +5,18 @@ const M_NavBar = () => {
     <>
       <nav>
         <div class="nav-wrapper">
-          <a href="#" class="brand-logo">
-            Logo
-          </a>
+          <label style={{ color: "white", fontSize: "200%" }}>Title</label>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li>
-              <a href="a.html">A</a>
+              <a href="#">Link</a>
             </li>
             <li>
-              <a href="b.html">B</a>
+              <a href="#">Link</a>
             </li>
             <li>
-              <a href="c.html">C</a>
+              <a href="#">Link</a>
+            </li> <li>
+              <a href="#">Link</a>
             </li>
           </ul>
         </div>

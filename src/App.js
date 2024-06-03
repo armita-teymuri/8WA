@@ -20,7 +20,7 @@ const App = ({}) => {
     <PreviewContext.Provider value={{ preview, setPreview }}>
       <ViewModeContext.Provider value={{ viewMode, setViewMode }}>
         <Header setViewMode={setViewMode} />
-        <FormMenu />
+
         <div style={{ overflowX: "scroll" ,width:"100%"}}>
           <AddSign
             onClick={() => {

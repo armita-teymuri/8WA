@@ -1,13 +1,12 @@
 import "./FormMenu.css";
+import M_Tab from "../../menu-items/M_Tab";
 import M_Card from "../../menu-items/M_Card";
 import M_NavBar from "../../menu-items/M_NavBar";
-import M_Button from "../../menu-items/M_Button";
 import M_Footer from "../../menu-items/M_Footer";
 import ImageButton from "../image_button/ImageButton";
+import N_Button from "../../menu-items2/button/N_Button";
 import M_Pagination from "../../menu-items/M_Pagination";
 import M_BreadCrumbs from "../../menu-items/M_BreadCrumbs";
-import M_Tab from "../../menu-items/M_Tab";
-import N_Button from "../../menu-items2/button/N_Button";
 
 const ELEMENTS = {
   1: {
@@ -51,23 +50,14 @@ const FormMenu = ({ onSelect }) => {
   return (
     <>
       <div style={{ display: "inline-block" }}>
-        {Object.keys(ELEMENTS).map((key) =>
-          ELEMENTS[key] == 0 ? (
-            <>
-              <span> | </span>
-            </>
-          ) : (
-            <ImageButton
-              key={key}
-              elementId={key}
-              onClick={() => {
-                onSelect(ELEMENTS[key].element);
-              }}
-              alt={ELEMENTS[key].alt}
-              icon={ELEMENTS[key].icon}
-            />
-          )
-        )}
+        {Object.keys(ELEMENTS).map((key) => (
+          <ImageButton
+            key={key}
+            elementId={key}
+            alt={ELEMENTS[key].alt}
+            icon={ELEMENTS[key].icon}
+          />
+        ))}
       </div>
     </>
   );

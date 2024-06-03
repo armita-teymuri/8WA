@@ -5,17 +5,7 @@ const M_BreadCrumbs = () => {
     <>
       <nav>
         <div class="nav-wrapper">
-          <div class="col s12">
-            <a href="#!" class="breadcrumb">
-              1
-            </a>
-            <a href="#!" class="breadcrumb">
-              2
-            </a>
-            <a href="#!" class="breadcrumb">
-              3
-            </a>
-          </div>
+          <div class="col s12">1 » 2 » 3</div>
         </div>
       </nav>
     </>

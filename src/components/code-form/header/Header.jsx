@@ -2,6 +2,7 @@ import "./Header.css";
 import { useContext, useState } from "react";
 import ImageButton from "../image_button/ImageButton";
 import PreviewContext from "../../../contexts/previewContext";
+import FormMenu from "../menu/FormMenu";
 
 const Header = ({ setViewMode }) => {
   const {preview, setPreview} = useContext(PreviewContext);
@@ -13,28 +14,28 @@ const Header = ({ setViewMode }) => {
     2: { value: true, alt: "Preview", icon: "9999" },
   };
 
-  const viewModeItems = {
-    1: {
-      value: "CodeForm-ViewMode-Desktop",
-      alt: "Desktop",
-      icon: "2001",
-    },
-    2: {
-      value: "CodeForm-ViewMode-Tablet",
-      alt: "Tablet",
-      icon: "2002",
-    },
-    3: {
-      value: "CodeForm-ViewMode-Mobile",
-      alt: "Mobile",
-      icon: "2003",
-    },
-  };
+  // const viewModeItems = {
+  //   1: {
+  //     value: "CodeForm-ViewMode-Desktop",
+  //     alt: "Desktop",
+  //     icon: "2001",
+  //   },
+  //   2: {
+  //     value: "CodeForm-ViewMode-Tablet",
+  //     alt: "Tablet",
+  //     icon: "2002",
+  //   },
+  //   3: {
+  //     value: "CodeForm-ViewMode-Mobile",
+  //     alt: "Mobile",
+  //     icon: "2003",
+  //   },
+  // };
 
   return (
     <>
       <div className="CodeForm-Menu">
-        <div className="CodeForm-Header-Left">
+        {/* <div className="CodeForm-Header-Left">
           {Object.keys(viewModeItems).map((key) => (
             <ImageButton
               isActive={key == selectedViewPort}
@@ -46,11 +47,9 @@ const Header = ({ setViewMode }) => {
               icon={viewModeItems[key].icon}
             />
           ))}
-        </div>
+        </div> */}
 
-        <span> | </span>
-
-        <div className="CodeForm-Header-Right">
+   
           {Object.keys(preViewItems).map((key) => (
             <ImageButton
               isActive={key == selectedPreView}
@@ -62,7 +61,11 @@ const Header = ({ setViewMode }) => {
               icon={preViewItems[key].icon}
             />
           ))}
-        </div>
+
+          <span> | </span>
+
+          <FormMenu/>
+    
       </div>
     </>
   );

@@ -6,7 +6,7 @@ const M_Pagination = () => {
       <ul class="pagination">
         <li class="disabled">
           <a href="#!">
-            <i class="material-icons">chevron_left</i>
+            <i class="material-icons">«</i>
           </a>
         </li>
         <li class="active">
@@ -26,7 +26,7 @@ const M_Pagination = () => {
         </li>
         <li class="waves-effect">
           <a href="#!">
-            <i class="material-icons">chevron_right</i>
+            <i class="material-icons">»</i>
           </a>
         </li>
       </ul>

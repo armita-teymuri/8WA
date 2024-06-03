@@ -1,6 +1,12 @@
 import "./ImageButton.css";
 
-const ImageButton = ({ alt, icon, onClick, isActive, elementId }) => {
+const ImageButton = ({
+  alt,
+  icon,
+  onClick = () => {},
+  isActive,
+  elementId,
+}) => {
   return (
     <>
       <div
@@ -9,7 +15,7 @@ const ImageButton = ({ alt, icon, onClick, isActive, elementId }) => {
         onClick={onClick}
         draggable="true"
       >
-        <img draggable="false" src={"/icons/" + icon + ".png"} />
+        {/* <img draggable="false" src={"/icons/" + icon + ".png"} /> */}
         <span draggable="false">{alt}</span>
       </div>
     </>
