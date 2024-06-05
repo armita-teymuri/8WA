@@ -4,14 +4,12 @@ import { ELEMENTS } from "../menu/FormMenu";
 import PlaceHolder from "../layouts/PlaceHolder";
 import { useState, useEffect, useContext } from "react";
 import PreviewContext from "../../../contexts/previewContext";
-import ViewModeContext from "../../../contexts/viewModeContext";
 
 const DRAG_OVER = "IWA-Cell-Drag-Over";
 
 const Screen = () => {
   const [data, setData] = useState([[<PlaceHolder />]]);
   const { preview, setPreview } = useContext(PreviewContext);
-  const { viewMode, setViewMode } = useContext(ViewModeContext);
 
   useEffect(() => {}, [data]);
 
@@ -91,7 +89,7 @@ const Screen = () => {
             border: "4px solid lightgray",
             fontSize: "100%",
           }}
-          className={"CodeForm-ViewMode " + viewMode}
+          className={"CodeForm-ViewMode"}
         >
           {!preview ? getAdder(0) : ""}
           {data.map((_, rowIndex) => (
